@@ -1,0 +1,67 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div class="fund">
+
+	</div>
+</body>
+</html>
+<style type="text/css">
+	.fund {
+		width: 200px;
+		height: 200px;
+		padding: 20px;
+		border: 1px dashed red;
+		background-color: green;
+		background-image: url(favicon.ico);
+		margin: 0 auto;
+	    background-clip: content-box;
+	    background-origin: padding-box;
+	    background-repeat: no-repeat;
+	}
+</style>
+<script type="text/javascript">
+function Light() {
+	this.state = 'off';
+	this.button = null;
+}
+Light.prototype = {
+	constructor: Light,
+
+	init: function() {
+		var button = document.createElement('button');
+		var self = this;
+		button.innnerHTML = '开关';
+
+		this.button = document.body.appendChild(button);
+		this.button.onclick = function() {
+			self.buttonPressed();
+		};
+	},
+
+	buttonPressed: function() {
+		if (this.state === 'off') {
+			console.log('开灯');
+			this.state = 'on'
+		} else if (this.state === 'on') {
+			console.log('关灯');
+			this.state = 'off'
+		}
+	}
+}
+</script>
+<script>
+	function button(a, b) {
+		this.init.apply(this, arguments)
+	}
+	button.prototype.init = function(a) {
+		this.a = a;
+	}
+	button.prototype.alert = function() {
+		alert(this.a);
+	}
+	var btn = new button('a', 'b');
+	btn.alert();
+</script>
