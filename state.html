@@ -27,6 +27,9 @@ function Light() {
 	this.state = 'off';
 	this.button = null;
 }
+function LightOn() {
+	
+}
 Light.prototype = {
 	constructor: Light,
 
@@ -51,17 +54,4 @@ Light.prototype = {
 		}
 	}
 }
-</script>
-<script>
-	function button(a, b) {
-		this.init.apply(this, arguments)
-	}
-	button.prototype.init = function(a) {
-		this.a = a;
-	}
-	button.prototype.alert = function() {
-		alert(this.a);
-	}
-	var btn = new button('a', 'b');
-	btn.alert();
 </script>
